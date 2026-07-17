@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Preset for Ansible specs repositories (requirements.yml / base-requirements.yml).",
+  "extends": ["github>projectpotos/renovate-config"],
+  "ansible-galaxy": {
+    "managerFilePatterns": ["/(^|\\/)(base-)?requirements\\.ya?ml$/"]
+  }
+}
