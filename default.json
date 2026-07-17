@@ -20,6 +20,11 @@
       "description": "No cooldown for our own releases",
       "matchPackageNames": ["projectpotos/**", "ghcr.io/projectpotos/**"],
       "minimumReleaseAge": "0 days"
+    },
+    {
+      "description": "Dont update requires-python automatically to support multiple python versions",
+      "matchDepTypes": ["requires-python"],
+      "enabled": false
     }
   ],
   "vulnerabilityAlerts": {
