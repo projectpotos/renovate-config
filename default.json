@@ -5,7 +5,7 @@
     "config:best-practices",
     ":semanticCommits",
     ":enablePreCommit",
-    "schedule:nonOfficeHours",
+    "schedule:weekly",
     "mergeConfidence:all-badges"
   ],
   "timezone": "Europe/Zurich",
@@ -17,9 +17,16 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
-      "description": "No cooldown for our own releases",
+      "description": "Group updates into one PR per manager",
+      "matchPackageNames": ["**"],
+      "groupName": "{{manager}} dependencies"
+    },
+    {
+      "description": "No cooldown or schedule for our own releases",
       "matchPackageNames": ["projectpotos/**", "ghcr.io/projectpotos/**"],
-      "minimumReleaseAge": "0 days"
+      "minimumReleaseAge": "0 days",
+      "groupName": "projectpotos dependencies",
+      "schedule": ["at any time"]
     },
     {
       "description": "Dont update requires-python automatically to support multiple python versions",
