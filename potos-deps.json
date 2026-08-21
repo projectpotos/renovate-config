@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "No cooldown or schedule for our own releases",
+  "packageRules": [
+    {
+      "description": "No cooldown or schedule for our own releases",
+      "matchPackageNames": ["projectpotos/**", "ghcr.io/projectpotos/**"],
+      "minimumReleaseAge": "0 days",
+      "groupName": "projectpotos dependencies",
+      "schedule": ["at any time"]
+    }
+  ]
+}
